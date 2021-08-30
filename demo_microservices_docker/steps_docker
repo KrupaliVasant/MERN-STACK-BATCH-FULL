@@ -1,0 +1,11 @@
+create docker in the following folders
+1.todo 
+2.user
+3.apigateway
+
+create docker-compose.yml in the following folder
+main project folder
+
+
+in terminal -> cd main project
+docker-compose build

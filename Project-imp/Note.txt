@@ -1,0 +1,10 @@
+About this project
+====================
+Node js, express project
+    create
+    1. api
+    2. mongodb connectivity
+    3. handling data => client side, perform  CURD  operation on mongodb
+
+    React Application(client) foontend  --> Express,API, Node js Backend --> Mongodb,database
+     React Application(client) foontend <-- Express,API, Node js Backend <-- Mongodb,database

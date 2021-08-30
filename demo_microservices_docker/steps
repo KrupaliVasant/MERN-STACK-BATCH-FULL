@@ -1,0 +1,79 @@
+ToDo APP
+==========
+1. User => Api => 8020 -> user folder -> app.js,package.json,config.js, /bin/www
+
+create a folder called user inside your project folder.
+type npm init --y in the terminal
+install express
+create app.js and config.js
+create a folder called bin, inside bin create a file called www.
+
+ToDo => Api => 8010 -> Todo folder -> app.js,package.json,config.js, /bin/www
+UI  => 3000 -> UI folder -> app.js,package.json,config.js, /bin/www
+Api gateway => 8030 -> apigateway folder -> app.js,package.json,config.js, /bin/www
+1. npm install http-proxy-middleware
+
+
+// /public/index.html
+<html> 
+<body>
+    welcome ALL
+<a href="http://localhost:8020">User</a>
+<a href="http://localhost:8030/tododata/">todo</a>
+</body>    
+</html>
+
+
+// app.js
+const express=require('express');
+let app =express();
+const path=require('path');
+
+app.use('/welcome',express.static(path.join(__dirname,"public")))
+// app.get('/',(req,res)=>{
+//     res.send("Hello User")
+// });
+
+
+module.exports=app;
+
+
+//  config.js
+let config={
+    WWW_PORT:(process.env.PORT || 3000) 
+}
+
+module.exports=config;
+
+
+// /apigateway/app.js
+const express=require('express');
+const {createProxyMiddleware}=require('http-proxy-middleware');
+const config=require('./config')
+let proxyTodo;
+let proxyUser;
+
+let app =express();
+
+app.get('/',(req,res)=>{
+    res.send("Hello User")
+});
+
+proxyTodo=createProxyMiddleware({target:config.todo_URL,pathRewrite:{'^/tododata/':'/'}});
+app.use('/tododata/',proxyTodo);
+
+
+module.exports=app;
+
+
+// /apigateway/config.js
+let config={
+    WWW_PORT:(process.env.PORT || 8030),
+    todo_URL:(process.env.todo_URL || 'http://localhost:8010'),
+    user_URL:(process.env.user_URL || 'http://localhost:8020')
+}
+
+module.exports=config;
+
+
+

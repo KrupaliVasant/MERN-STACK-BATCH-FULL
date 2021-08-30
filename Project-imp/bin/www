@@ -1,0 +1,10 @@
+// /bin/www
+
+const app=require("../app");
+const {serverConfig}=require('../config').appConfig;
+const appService=require('../app.service')
+
+
+app.listen(serverConfig.port,()=>{
+    console.log("Server is running")
+})

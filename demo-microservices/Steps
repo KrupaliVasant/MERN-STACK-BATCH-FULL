@@ -1,0 +1,27 @@
+ToDo App
+==========
+1. User => Api => 8020  -> user folder ->app.js , package.json, config.js, /bin/www
+
+Create a folder called user inside your project folder.
+type npm init --y in the terminal 
+install express
+create app.js and config.js
+create a folder called bin, inside bin createa file called www.
+
+ToDo => Api =>8010 -> ToDo folder -> app.js package.json, config.js, ./bin/www
+Ui => 3000 =>UI folder -> app.js package.json, config.js, ./bin/www
+Api gateway => 8030 -> api gateway folder -> app.js package.json, config.js, ./bin/www
+
+Copy n paste to ToDo, UI, api gateway
+     -> from user -> bin folder, app.js, config.js, package.json
+
+    In cd todo -> npm install 
+    -> config.js ->  change port number
+    -> app.js -> change msg
+    -> package.json -> name we can change
+    -> npm start
+
+    for apigateway -> 
+        1. npm install http-proxy-middleware
+        2. config.js -> add port for others
+        3. app.js -> 

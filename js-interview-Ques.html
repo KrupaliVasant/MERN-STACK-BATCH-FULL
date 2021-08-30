@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-interview-time</title>
+</head>
+    <div>
+        <a id ="id" href="https://google.com" onclick="onfun()">onclick</a>
+    </div>
+<body>
+    <script>
+        function onfun(){
+            document.getElementById("id").setAttribute("href", "https:/fb.com");
+        }
+        console.log(typeof(typeof(1)));
+
+        // Arrow function expressions
+        // An arrow function expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
+
+        // Differences & Limitations:
+
+        // Does not have its own bindings to this or super, and should not be used as methods.
+        // Does not have new.target keyword.
+        // Not suitable for call, apply and bind methods, which generally rely on establishing a scope.
+        // Can not be used as constructors.
+        // Can not use yield, within its body.
+        let obj = {
+            "firstName": "Naveen",
+            "lastName": "Kumar",
+            "function": function () {
+                console.log(this.firstName + " " + this.lastName);
+            },
+            "arrFunction": () => {
+                console.log(this.firstName + " " + this.lastName);
+            }
+        }
+        obj.function(); //output: Naveen Kumar
+        obj.arrFunction(); // undefined undefined
+
+        //=======================================================
+
+        window.firstName = 'Test';
+        let obj1 = {
+            "firstName": "Naveen",
+            "lastName": "Kumar",
+            "function": function () {
+                console.log(this.firstName + " " + this.lastName);
+            },
+            "arrFunction": () => {
+                console.log(this.firstName + " " + this.lastName);
+            }
+        }
+        obj1.function(); //output: Naveen Kumar
+        obj1.arrFunction(); //output: Test Undefined
+
+        //=======================================================
+
+        //Currying Function  https://javascript.info/currying-partials
+        function outer() {
+            console.log("Outer...");
+            return function inner() {
+                console.log("inner")
+            }
+        }
+        outer()(); // output: Outer...  inner
+
+        //=======================================================
+
+        //console.log(sum(2,3));
+        const sum = (a, b) => a + b;
+        console.log(sum(2, 3));
+
+        //=======================================================
+
+        function test(a, b, ...args) {
+            console.log("arguments>", args);
+        }
+        test(1, 2, 7, 8, 9) //output: arguments> [7, 8, 9]
+
+        //=======================================================
+
+        function test1(a, b, ...Naveen) {
+            console.log("agagrwal>", Naveen);
+        }
+        test1(1, 2, 7, 8, 9) //agagrwal> (3) [7, 8, 9]
+
+
+        //=======================================================
+
+        let arr3 = ['a', 'b', 'c'];
+        let arr4 = arr3;
+        console.log("??", arr4); //output: ?? (3) ["a", "b", "c"]
+        arr4.push('r');
+        console.log("??", arr4); //output: ?? (3) ["a", "b", "c", "r"]
+        console.log("??", arr3); //output: ?? (3) ["a", "b", "c", "r"]
+
+        //=======================================================
+
+        let arr31 = ['a', 'b', 'c'];
+        let arr41 = [...arr31];  //rest operator
+        console.log("??", arr41); //output: ?? (3) ["a", "b", "c"]
+        arr41.push('r');
+        console.log("??", arr41); //output: ?? (3) ["a", "b", "c", "r"]
+        console.log("??", arr31); //output: ?? (3) ["a", "b", "c"]
+
+        //=======================================================
+        
+        // onClick={handleClick()}; // in html system
+        
+        // onClick={handleClick}; // react system
+        
+        //=======================================================
+        
+        // <div>
+        //     <span></span>
+        //     <p>Himanshu Aggarwal</p>
+        // </div>
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    1. What are new features in HTML5?
+    2. Why we use symantic tags?
+    3. What is the purpose of <!DOCTYPE>
+    4. What is Id and class, how we represent it, privarioty?
+            CSS3
+    1. New features in CSS3
+    2. Position property explain
+    3. Box model explain.
+    3. if <p style="margin=0px">Hello</p> where it display on screen
+    4. What is the syntax of media query
+    5. What we use in head tag for responsiveness
+    6. Explain Gride
+    7. How to put element horizontaly and vertically center ways are?
+            BOOTSTRAP4
+    1. Difference between bootstrap 3 and 4
+    2. padding classes in bootstrap
+    3. renponsive class in bootstrap.
+    4. Explain gride in bootstrap.
+    5. If we take 1 table there are 7 cols -> 1st 3 cols are fixed and other 4 cols we want to scroll then what is the sinario.
+            ES6
+    1. New features in ES6.
+    2. What is the difference between arraw function and regular function.
+    3. data types in javascript.
+    4. Explain Undefined and NULL.
+    5. What is AJAX
+    6. 
+ -->

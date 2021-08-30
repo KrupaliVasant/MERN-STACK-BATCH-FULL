@@ -1,0 +1,8 @@
+MREN Stack => MongoDB Express React Node
+
+Expres JS => Web framework for Node, Built on top of http module,
+	- allows to use middlewares to respond HTTP requests
+	- Defines routing table based on HTTP methods
+	- Render HTML pages
+
+Needs to be installed.  npm install express

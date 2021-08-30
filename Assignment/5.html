@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Number 1: <input type="number" id="n1" /></label><br/>
+    <label>Number 2: <input type="number" id="n2" /></label><br/>
+    <button type="button" onclick="Mul()">Multiply</button>
+    <button type="button" onclick="Div()">Divide</button>
+    <div id="result"></div>
+
+    <script>
+        const Mul=()=>{
+            let n1 = document.getElementById('n1').value;
+            let n2 = document.getElementById('n2').value;
+            let result = n1 * n2;
+            document.getElementById('result').innerHTML="The result is : "+result;
+        }
+        const Div=()=>{
+            let n1 = document.getElementById('n1').value;
+            let n2 = document.getElementById('n2').value;
+            let result = n1 / n2;
+            document.getElementById('result').innerHTML="The result is : "+result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+1. Create React project
+2. index.js page replace 'render' with 'hydrate'
+3. Creating an Express Server and Rendering the App Component
+    npm i Express
+4. Configuring webpack, Babel, and npm Scripts
+    npm i @babel/preset-env @babel/preset-react @babel/register ignore-styles
+5. npm buid
+6. npm start
+7. node .\server\index.js

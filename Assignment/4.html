@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="number" id="guessNumber" name="guessNumber" min="0" max="10" />
+    <button type="button" onclick="Guess()">Click</button>
+
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+
+    <script>
+        const Guess = () => {
+            const randomNumber = Math.floor(Math.random() * 10) + 1;
+            document.getElementById('p1').innerHTML = "Random Number 1 to 10: " + randomNumber;
+            const guessNumber = document.getElementById('guessNumber').value;
+            document.getElementById('p2').innerHTML = "Input Number " + guessNumber;
+
+            if (randomNumber == guessNumber) {
+                document.getElementById('p3').innerHTML = "Good Work!!!"
+            } 
+            else {
+                document.getElementById('p4').innerHTML = "Bad Work!!!"
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+test in postman: http://localhost:3000/api/v1/users/register (POST)
+                http://localhost:3000/api/v1/users/login (POST)
+                http://localhost:3000/api/v1/users/get (GET)
+
+1. Create folder (project folder)
+2. npm init
+3. npm i express mongoose body-parser
+4. config => appConfig.js
+5. config => index.js
+6. config => appConfig.js
+7. config => index.js
+8. users => user.entity.js
+9. users =>user.dao.js  (DAO : )
+10. users => user.service.js
+11. users => user.controller.js
+12. users=> user.router.js
+13. users => index.js
+14. v1=> index.js
+15 app.service.js
+16. app.js
+17. bin => www
+18. package.json => "start":"node ./bin/www",
+19. run --> npm start
+20. check url in postman: 
+	POST: http://localhost:3000/api/v1/users/register
+	POST: http://localhost:3000/api/v1/users/login
+21. check the express console.
